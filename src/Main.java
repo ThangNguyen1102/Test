@@ -8,8 +8,8 @@ public class Main {
         System.out.print("Nhap do dai canh: ");
         square.canh = scanner.nextFloat();
         square.showCanh();
-        square.dientich();
-        square.chuvi();
+        square.dienTich();
+        square.chuVi();
         square.show();
     }
 }
