@@ -66,33 +66,27 @@ public class News implements INews{
     }
     
     public void caculate(){
-        float s = 0;
+        float tong = 0;
         for(int i = 0; i < rateList.length; i++){
-            s += rateList[i];
+            tong += rateList[i];
         }
-        averageRate = s/3;
+        averageRate = tong/3;
         System.out.println("average: " + averageRate);
     }
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("1 - Insert news");
         System.out.println("2 - View list news");
         System.out.println("3 - Averaga rate");
         System.out.println("4 - Exit");
-
         ArrayList<News> arrayList = new ArrayList<News>();
-
-
         while(true) {
             System.out.print("Nhap lua chon: ");
             int chon = scanner.nextInt();
             switch (chon) {
                 case 1:
                     News a = new News();
-
                     System.out.print("Nhap title: ");
                     a.setTitle(scanner.nextLine());
                     scanner.hasNextLine();
@@ -106,29 +100,23 @@ public class News implements INews{
                     a.setContent(scanner.nextLine());
                     scanner.hasNextLine();
                     scanner.next();
-
                     System.out.println("Moi nhap danh gia: ");
-
                     for(int i = 0; i < 3; i++){
                         a.rateList[i] = scanner.nextInt();
                     }
-
                     arrayList.add(a);
                     break;
-
                 case 2:
                     for( News i : arrayList) {
                         i.display();
                     }
                     break;
-
                 case 3:
                     for( News i : arrayList) {
                         i.caculate();
                         i.display();
                     }
                     break;
-
                 case 4:
                     System.exit(0);
             }
