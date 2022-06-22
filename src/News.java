@@ -8,6 +8,7 @@ public class News implements INews{
     private String author;
     private String content;
     public float averageRate;
+    int[] rateList = new int[3];
 
     public int getId() {
         return id;
@@ -63,7 +64,7 @@ public class News implements INews{
         System.out.println("content: " + getContent());
         System.out.println("averageRate: " + getAverageRate());
     }
-    int[] rateList = new int[3];
+    
     public void caculate(){
         float s = 0;
         for(int i = 0; i < rateList.length; i++){
