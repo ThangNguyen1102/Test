@@ -1,5 +1,5 @@
 public interface INews {
-    default void display(){
+    static void display(){
 
     }
 }
